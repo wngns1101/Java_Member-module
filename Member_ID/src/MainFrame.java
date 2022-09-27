@@ -33,17 +33,35 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        memberId = new javax.swing.JTextField();
-        memberPw = new javax.swing.JTextField();
-        memberChkPw = new javax.swing.JTextField();
-        memberName = new javax.swing.JTextField();
+        memId = new javax.swing.JTextField();
+        memPw = new javax.swing.JTextField();
         chkId = new javax.swing.JButton();
         sign = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        memReg = new javax.swing.JRadioButton();
+        memAss = new javax.swing.JRadioButton();
+        memStu = new javax.swing.JRadioButton();
+        jLabel7 = new javax.swing.JLabel();
+        memSwimming = new javax.swing.JCheckBox();
+        memGame = new javax.swing.JCheckBox();
+        memGolf = new javax.swing.JCheckBox();
+        memSki = new javax.swing.JCheckBox();
+        memBook = new javax.swing.JCheckBox();
+        memTennis = new javax.swing.JCheckBox();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        memJob = new javax.swing.JComboBox<>();
+        memPay = new javax.swing.JComboBox<>();
+        memChkPw = new javax.swing.JTextField();
+        memName = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +89,44 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setText("회원 구분");
+
+        buttonGroup1.add(memReg);
+        memReg.setText("정회원");
+
+        buttonGroup1.add(memAss);
+        memAss.setText("준회원");
+
+        buttonGroup1.add(memStu);
+        memStu.setText("학생회원");
+
+        jLabel7.setText("관심 분야");
+
+        memSwimming.setText("수영");
+
+        memGame.setText("게임");
+
+        memGolf.setText("골프");
+
+        memSki.setText("스키");
+
+        memBook.setText("독서");
+
+        memTennis.setText("테니스");
+
+        jLabel8.setText("직업");
+
+        jLabel9.setText("결제 방법");
+
+        memJob.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "학생", "직장인", "주부" }));
+
+        memPay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "현금", "카드", "포인트" }));
+        memPay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                memPayActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,30 +135,52 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(memberChkPw)
-                            .addComponent(memberName, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(139, 139, 139)
                         .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(sign)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(43, 43, 43)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(memberPw, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(memberId, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(sign)
-                                    .addComponent(chkId))))))
-                .addContainerGap(10, Short.MAX_VALUE))
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(memPw)
+                                    .addComponent(memId)
+                                    .addComponent(memChkPw)
+                                    .addComponent(memName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(chkId))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel9))
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(memReg, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(memSwimming)
+                                            .addComponent(memSki))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(memAss, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(memGame)
+                                            .addComponent(memBook))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(memTennis)
+                                            .addComponent(memGolf)
+                                            .addComponent(memStu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(memPay, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(memJob, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,32 +188,62 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(jLabel1)
                 .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(memberId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chkId))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(memberPw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(memberChkPw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(memberName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chkId)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(memId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(memPw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(memChkPw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(memName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(memReg)
+                    .addComponent(memAss)
+                    .addComponent(memStu)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(memSwimming)
+                    .addComponent(memGame)
+                    .addComponent(memGolf)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(memSki)
+                    .addComponent(memBook)
+                    .addComponent(memTennis))
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(memJob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(memPay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel9)))
+                .addGap(35, 35, 35)
                 .addComponent(sign)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void chkIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkIdActionPerformed
-        String id = memberId.getText();
+        String id = memId.getText();
         try{
             String path = "/Users/juhoonlee/Desktop/2-2/Java_Member-module/Member_ID/src/member.txt";
             FileReader reader = new FileReader(path);
@@ -162,10 +270,48 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_chkIdActionPerformed
 
     private void signActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signActionPerformed
-        int pw = Integer.parseInt(memberPw.getText());
-        int chkPw = Integer.parseInt(memberChkPw.getText());
-        String id = memberId.getText();
-        String name = memberName.getText();
+        int pw = Integer.parseInt(memPw.getText());
+        int chkPw = Integer.parseInt(memChkPw.getText());
+        String id = memId.getText();
+        String name = memName.getText();
+        
+        String member = null;
+        if(memReg.isSelected()){
+            member = memReg.getText();
+        }else if(memAss.isSelected()){
+            member = memAss.getText();
+        }else{
+            member = memStu.getText();
+        }
+        
+        int field = 0;
+        if(memSwimming.isSelected()){
+            int swim = 32;
+            field = field | swim;
+        }
+        if(memGame.isSelected()){
+            int game = 16;
+            field = field | game;
+        }
+        if(memGolf.isSelected()){
+            int golf = 8;
+            field = field | golf;
+        }
+        if(memSki.isSelected()){
+            int ski = 4;
+            field = field | ski;
+        }
+        if(memBook.isSelected()){
+            int book = 2;
+            field = field | book;
+        }
+        if(memTennis.isSelected()){
+            int tennis = 1;
+            field = field | tennis;
+        }
+        
+        String job = memJob.getSelectedItem().toString();
+        String pay = memPay.getSelectedItem().toString();
         
         int result = 1;
         try{
@@ -185,7 +331,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
             
             if(pw == chkPw && result == 1){
-                fr.append(id + " " + pw + " " + name + "\n");
+                fr.append(id + " " + pw + " " + name + " " + member + " " + field + " " + job + " " + pay + " " + "\n");
                 JOptionPane.showMessageDialog(null, "회원가입에 성공하셨습니다.");
                 fr.close();
             }else{
@@ -195,6 +341,10 @@ public class MainFrame extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_signActionPerformed
+
+    private void memPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memPayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_memPayActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,16 +382,34 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JButton chkId;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField memberChkPw;
-    private javax.swing.JTextField memberId;
-    private javax.swing.JTextField memberName;
-    private javax.swing.JTextField memberPw;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JRadioButton memAss;
+    private javax.swing.JCheckBox memBook;
+    private javax.swing.JTextField memChkPw;
+    private javax.swing.JCheckBox memGame;
+    private javax.swing.JCheckBox memGolf;
+    private javax.swing.JTextField memId;
+    private javax.swing.JComboBox<String> memJob;
+    private javax.swing.JTextField memName;
+    private javax.swing.JComboBox<String> memPay;
+    private javax.swing.JTextField memPw;
+    private javax.swing.JRadioButton memReg;
+    private javax.swing.JCheckBox memSki;
+    private javax.swing.JRadioButton memStu;
+    private javax.swing.JCheckBox memSwimming;
+    private javax.swing.JCheckBox memTennis;
     private javax.swing.JButton sign;
     // End of variables declaration//GEN-END:variables
 }
