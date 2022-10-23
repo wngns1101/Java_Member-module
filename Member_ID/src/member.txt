@@ -1,1 +1,2 @@
-kdhong 1234 홍길동 정회원 33
+hong 1234 honggildong 정회원 34 학생 현금 
+lee 1234 lee 정회원 36 학생 현금 

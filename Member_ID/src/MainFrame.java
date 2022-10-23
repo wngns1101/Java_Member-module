@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -59,9 +58,10 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         memJob = new javax.swing.JComboBox<>();
-        memPay = new javax.swing.JComboBox<>();
         memChkPw = new javax.swing.JTextField();
         memName = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        memPay = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,12 +120,13 @@ public class MainFrame extends javax.swing.JFrame {
 
         memJob.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "학생", "직장인", "주부" }));
 
-        memPay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "현금", "카드", "포인트" }));
-        memPay.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                memPayActionPerformed(evt);
-            }
+        memPay.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "현금", "카드", "계좌이체" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
         });
+        memPay.setSize(new java.awt.Dimension(20, 152));
+        jScrollPane1.setViewportView(memPay);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,48 +140,52 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(sign)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(memPw)
-                                    .addComponent(memId)
-                                    .addComponent(memChkPw)
-                                    .addComponent(memName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chkId))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel9))
-                                .addGap(38, 38, 38)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel8)
+                                        .addComponent(jLabel7)
+                                        .addComponent(jLabel6)
+                                        .addComponent(jLabel9))
+                                    .addGap(44, 44, 44)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(memJob, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(memSwimming)
+                                                .addComponent(memSki))
+                                            .addGap(30, 30, 30)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(memGame)
+                                                .addComponent(memBook))
+                                            .addGap(29, 29, 29)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(memGolf)
+                                                .addComponent(memTennis)))
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel2)
+                                        .addComponent(jLabel4))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
                                             .addComponent(memReg, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(memSwimming)
-                                            .addComponent(memSki))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(memAss, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(memGame)
-                                            .addComponent(memBook))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(memTennis)
-                                            .addComponent(memGolf)
-                                            .addComponent(memStu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(memPay, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(memJob, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(34, Short.MAX_VALUE))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(memStu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(memPw)
+                                        .addComponent(memId)
+                                        .addComponent(memChkPw)
+                                        .addComponent(memName))))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(chkId))))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,19 +229,17 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(memSki)
                     .addComponent(memBook)
                     .addComponent(memTennis))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(memJob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(memPay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel9)))
-                .addGap(35, 35, 35)
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(memJob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(77, 77, 77)
                 .addComponent(sign)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         pack();
@@ -248,7 +251,7 @@ public class MainFrame extends javax.swing.JFrame {
             String path = "/Users/juhoonlee/Desktop/2-2/Java_Member-module/Member_ID/src/member.txt";
             FileReader reader = new FileReader(path);
             BufferedReader br = new BufferedReader(reader);
-            String a = null;
+            String a;
             int result = 0;
             while((a = br.readLine()) != null){
                 String[] line = a.split(" ");
@@ -274,8 +277,8 @@ public class MainFrame extends javax.swing.JFrame {
         int chkPw = Integer.parseInt(memChkPw.getText());
         String id = memId.getText();
         String name = memName.getText();
+        String member;
         
-        String member = null;
         if(memReg.isSelected()){
             member = memReg.getText();
         }else if(memAss.isSelected()){
@@ -285,43 +288,24 @@ public class MainFrame extends javax.swing.JFrame {
         }
         
         int field = 0;
-        if(memSwimming.isSelected()){
-            int swim = 32;
-            field = field | swim;
-        }
-        if(memGame.isSelected()){
-            int game = 16;
-            field = field | game;
-        }
-        if(memGolf.isSelected()){
-            int golf = 8;
-            field = field | golf;
-        }
-        if(memSki.isSelected()){
-            int ski = 4;
-            field = field | ski;
-        }
-        if(memBook.isSelected()){
-            int book = 2;
-            field = field | book;
-        }
-        if(memTennis.isSelected()){
-            int tennis = 1;
-            field = field | tennis;
-        }
+        if(memSwimming.isSelected()) field = field | 32;
+        if(memGame.isSelected()) field = field | 18;
+        if(memGolf.isSelected()) field = field | 8;
+        if(memSki.isSelected()) field = field | 4;
+        if(memBook.isSelected()) field = field | 2;
+        if(memTennis.isSelected()) field = field | 1;
         
         String job = memJob.getSelectedItem().toString();
-        String pay = memPay.getSelectedItem().toString();
+        String[] strings = {"현금", "카드", "계좌이체"};
+        String pay = strings[memPay.getSelectedIndex()];
         
-        int result = 1;
+        
         try{
-            result = 1;
+            int result = 1;
             String path = "/Users/juhoonlee/Desktop/2-2/Java_Member-module/Member_ID/src/member.txt";
-            FileReader reader = new FileReader(path);
-            BufferedReader br = new BufferedReader(reader);
-            FileWriter writer = new FileWriter(path, true);
-            BufferedWriter fr = new BufferedWriter(writer);
-            String a = null;
+            BufferedReader br = new BufferedReader(new FileReader(path));
+            BufferedWriter fr = new BufferedWriter(new FileWriter(path, true));
+            String a;
             while((a = br.readLine()) != null){
                 String[] line = a.split(" ");
                 String txtId = line[0];
@@ -341,10 +325,6 @@ public class MainFrame extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_signActionPerformed
-
-    private void memPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memPayActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_memPayActionPerformed
 
     /**
      * @param args the command line arguments
@@ -395,6 +375,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton memAss;
     private javax.swing.JCheckBox memBook;
     private javax.swing.JTextField memChkPw;
@@ -403,7 +384,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField memId;
     private javax.swing.JComboBox<String> memJob;
     private javax.swing.JTextField memName;
-    private javax.swing.JComboBox<String> memPay;
+    private javax.swing.JList<String> memPay;
     private javax.swing.JTextField memPw;
     private javax.swing.JRadioButton memReg;
     private javax.swing.JCheckBox memSki;
